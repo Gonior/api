@@ -31,3 +31,5 @@ type = {
 }
 ```
 
+## deployed
+url : https://peaceful-crag-22666.herokuapp.com/
