@@ -6,7 +6,7 @@ TimeAgo.addDefaultLocale(id)
 
 const timeAgo = new TimeAgo('id-ID')
 
-console.log(timeAgo.format(new Date('2021-11-22T07:41:50.602+00:00').getTime()))
+
 const ActivitySchema = mongoose.Schema({
     userId : {
         type : mongoose.Types.ObjectId,
