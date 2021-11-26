@@ -11,7 +11,7 @@ app.use(express.json())
 app.use(cors())
 // route
 app.get('/', (req, res) => {
-    res.json({message : "Wellcome to system inventory SH3 api"})
+    res.json({success : true, message : "Berhasil terkoneksi dengan server"})
 })
 
 app.use('/user',authentication, require('./routes/User'))
