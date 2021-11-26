@@ -4,7 +4,8 @@
   "description": "this application only can use by RM Sangkan Hurip 3",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server.js"
+    "dev": "nodemon server.js",
+    "start": "node server.js"
   },
   "keywords": [
     "api",
