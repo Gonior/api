@@ -1,4 +1,4 @@
-require('dotenv').config()
+// require('dotenv').config()
 const mongoose = require('mongoose')
 // const Category = require('./Category')
 const uniqueValidator = require('mongoose-unique-validator')
