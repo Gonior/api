@@ -28,8 +28,9 @@ router.post('/', async (req, res) => {
         
         newItem.save((err, doc) => {
             if (err) {
+                
                 const errors = handleError(err)
-                return res.status(401).json({message : "Gagal menambahkan barang" , errors})
+                return res.status(400).json({message : "Gagal menambahkan barang" , errors})
             }
 
             return res.status(200).json({message : "Berhasil menambahkan barang", data  : doc})

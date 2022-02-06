@@ -11,6 +11,7 @@ Router.get('/', async (req, res) => {
         if (allCategories.length > 0) res.status(200).json(allCategories)
         else res.status(400).json({message : "Belum ada Kategori"})
     } catch (error) {
+        
         return res.status(500).json(JSON.stringify(error))
     }
 })
@@ -24,9 +25,9 @@ Router.post('/', async (req, res) => {
         newCategory.save((err, category) => {
             if (err) {
                 const errors = handleError(err)
-                return res.status(401).json({message : "Gagal menambahkan kategori", errors})
+                return res.status(400).json({message : "Gagal menambahkan kategori", errors})
             }
-            return res.status(200).json({message : "Berhasil menambahkan katerogi", data : category})
+            return res.status(200).json({message : "Berhasil menambahkan kategori", data : category})
         })
     } catch (error) {
         return res.status(500).json(JSON.stringify(error))
