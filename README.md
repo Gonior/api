@@ -15,7 +15,8 @@
 |/item/| GET| token | -|-| get all items
 |/item/id| GET| token | itemId |-| get a single Item
 |/item/| POST| token | *name, *unit, *category, *qty, *min, *max, *gap|-| add new item
-|/item/id| PUT| token | *itemId=id, *qty, *min, *max, *gap, *category, *unit, type{typeOfActivity, value, reason}, *userId |-| edit a item 
+|/item/id| PUT| token | *itemId=id, *qty, *min, *max, *gap, *category, *unit |-| edit a item 
+|/item/changeStock/id| PUT| token | *itemId=id, *type{typeOfActivity, value, reason}, *userId |-| change stock a item and add activity
 |/item/id| DELETE| token | itemId=id |-| delete a item
 |/activity/id| GET | token | - |-| get a item activities based descending date
 |/activity/id| GET | token | *itemId=id|limit(number)| get all activity with limit based descending date|

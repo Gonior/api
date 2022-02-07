@@ -27,7 +27,7 @@ const itemsSchema = mongoose.Schema({
     },
     max : {
         type : Number, 
-        default : 99
+        default : 99999
     },
     gap : {
         type : Number,
