@@ -99,7 +99,7 @@ router.put('/changeStock/:id', async (req, res) => {
                     let {typeOfActivity, value, reason} = type
                     let newActivity = new Activity({
                         userId, 
-                        do : typeOfActivity === "increase" ? "Telah menambahkan jumlah stok" : reason,
+                        do : reason,
                         typeOfActivity,
                         value,
                         itemId : updateItem._id

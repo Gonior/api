@@ -17,7 +17,7 @@ const ActivitySchema = mongoose.Schema({
     }, 
     date : {
         type : Date,
-        default : new Date(),
+        default : Date.now(),
     },
     itemId : {
         type : mongoose.Types.ObjectId,
