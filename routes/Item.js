@@ -16,6 +16,23 @@ router.get('/', async (req, res) => {
 })
 
 
+router.get('/:id', async (req, res) => {
+    try {
+        if (mongoose.Types.ObjectId.isValid(req.params.id)) {
+            let item = await Item.findOne({_id : req.params.id})
+            if (item) {
+                return res.status(200).json(item)
+            } else {
+                return res.status(404).json({message : "Item tidak ditemukan"})
+            }
+        } else {
+            return res.status(404).json({message : `ID tidak valid`})
+        }
+    } catch (e) {
+        res.status(500).json(JSON.stringify(e))
+    }
+})
+
 router.post('/', async (req, res) => {
     let {name, unit, category, qty, min, max, gap} = req.body
     
