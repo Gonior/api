@@ -58,7 +58,7 @@ router.post('/', async (req, res) => {
     }
 })
 router.put('/:id', async (req, res) => {
-    let {qty, min, max, gap, category, unit} = req.body
+    let {qty, min, max, gap, category, unit, name} = req.body
     try {
         if (mongoose.Types.ObjectId.isValid(req.params.id)) {
             let updateItem = await Item.findOne({_id : req.params.id})
@@ -66,6 +66,7 @@ router.put('/:id', async (req, res) => {
                 updateItem.qty = qty
                 updateItem.min = min
                 updateItem.max = max
+                updateItem.name = name
                 updateItem.gap = gap
                 updateItem.category = category
                 updateItem.unit = unit
