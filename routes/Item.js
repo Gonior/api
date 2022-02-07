@@ -99,6 +99,7 @@ router.put('/changeStock/:id', async (req, res) => {
                     let {typeOfActivity, value, reason} = type
                     let newActivity = new Activity({
                         userId, 
+                        date : Date.now(),
                         do : reason,
                         typeOfActivity,
                         value,
