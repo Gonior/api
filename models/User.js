@@ -58,7 +58,8 @@ userSchema.method('toAuthJSON', function () {
         username : this.username ,
         token : `Bearer ${this.generateJWT()}`,
         name : this.name,
-        role : this.role
+        role : this.role,
+        id : this._id
     }
 })
 
