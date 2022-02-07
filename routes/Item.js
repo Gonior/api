@@ -19,7 +19,7 @@ router.get('/', async (req, res) => {
 router.get('/:id', async (req, res) => {
     try {
         if (mongoose.Types.ObjectId.isValid(req.params.id)) {
-            let item = await Item.findOne({_id : req.params.id})
+            let item = await Item.findOne({_id : req.params.id}).populate('category')
             if (item) {
                 return res.status(200).json(item)
             } else {
